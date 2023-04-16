@@ -18,9 +18,9 @@ source $ZSH/oh-my-zsh.sh
 plugins=(git)
 
 # Load zsh-autosuggestions and zsh-syntax-highlighting plugins
-source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.oh-my-zsh/custom/plugins/zsh-vi-mode/zsh-vi-mode.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
 
 # Set preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -28,6 +28,9 @@ source ~/.oh-my-zsh/custom/plugins/zsh-vi-mode/zsh-vi-mode.zsh
 # else
 #   export EDITOR='mvim'
 # fi
+
+# Fix ssh
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 # Define personal aliases
 alias s="sudo"
@@ -59,3 +62,9 @@ neofetch
 # date +"Date : %d/%m/%Y Time : %H:%M:%S"
 # echo ""
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mint/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mint/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mint/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mint/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
